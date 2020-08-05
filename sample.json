@@ -1,0 +1,50 @@
+[
+  {
+  "object_id": "product1",
+  "title": "Product 1 Apple iphone",
+  "brand": "apple",
+  "attr_color": "Black",
+  "attr_os": "ios",
+  "attr_brand": "Apple",
+  "attr_size": "Medium",
+  "str_attr_color": "Black",
+  "str_attr_size": "Medium",
+  "str_attr_brand": "Apple",
+  "str_attr_os": "ios",
+  "price": 1400,
+  "category": ["mobile", "electronics"]
+  },
+  {
+  "object_id": "product2",
+  "title": "Product 2 samsung phone",
+  "brand": "samsung",
+  "attr_color": "white",
+  "attr_os": "android",
+  "attr_brand": "Samsung",
+  "attr_size": "Medium",
+  "str_attr_color": "white",
+  "str_attr_size": "Medium",
+  "str_attr_brand": "Samsung",
+  "str_attr_os": "android",
+  "price": 1900,
+  "category": ["mobile", "electronics"]
+  },
+  {
+  "object_id": "product3",
+  "title": "Product 3 samsung phone",
+  "brand": "samsung",
+  "attr_color": "Black",
+  "attr_os": "android",
+  "attr_brand": "Samsung",
+  "attr_size": "Large",
+  "str_attr_color": "Black",
+  "str_attr_size": "Large",
+  "str_attr_brand": "Samsung",
+  "str_attr_os": "android",
+  "price": 2100,
+  "category": ["mobile", "electronics"]
+  }
+
+
+
+]

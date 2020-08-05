@@ -1,0 +1,46 @@
+<schema name="product" version="1.0">
+<types>
+  <fieldType name="bool" class="solr.BoolField" multiValued="false" stored="false"/>
+  <fieldType name="pint" class="solr.IntPointField" multiValued="false"/>
+  <fieldType name="plong" class="solr.LongPointField" multiValued="false" stored="false"/>
+  <fieldType name="pfloat" class="solr.FloatPointField" multiValued="false" stored="false"/>
+  <fieldType name="string" class="solr.StrField" multiValued="false" stored="false"/>
+
+  <fieldType name="mytext" class="solr.TextField"  stored="false" indexed="true" positionIncrementGap="100" multiValued="false">
+    <analyzer type="index">
+      <charFilter class="solr.HTMLStripCharFilterFactory"/>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.EnglishMinimalStemFilterFactory"/>
+      <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="idx_synonyms.txt"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <charFilter class="solr.HTMLStripCharFilterFactory"/>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.EnglishMinimalStemFilterFactory"/>
+      <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="qry_synonyms.txt"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+    </analyzer>
+  </fieldType>
+</types>  
+<fields>
+  <field name="_version_" type="plong" indexed="false" stored="false" docValues="true"/>
+  <field name="object_id" type="string" docValues="true" required="true" stored="true"/>
+  <field name="price" type="pfloat" docValues="true"/>
+  <field name="category" type="string" multiValued="true" indexed="true" docValues="true"/>
+  <field name="brand" type="string"/>
+  <field name="title" type="mytext" stored="true"/>
+  
+  <dynamicField name="attr_*" type="mytext"/>
+  <dynamicField name="str_attr_*" type="string" docValues="true"/>
+
+  <copyField source="attr_*" dest="all_attr"/>
+  <field name="all_attr" type="mytext" multiValued="true" indexed="true"/>
+  <copyField source="str_attr_*" dest="str_all_attr"/>
+  <field name="str_all_attr" type="string" multiValued="true" docValues="true"/>
+</fields>
+<uniqueKey>object_id</uniqueKey>
+<solrQueryParser defaltOperator="OR"/>
+</schema>
