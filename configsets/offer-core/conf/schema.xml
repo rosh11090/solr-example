@@ -1,4 +1,4 @@
-<schema name="product" version="1.0">
+<schema name="offer" version="1.0">
 <types>
   <fieldType name="bool" class="solr.BoolField" multiValued="false" stored="false"/>
   <fieldType name="pint" class="solr.IntPointField" multiValued="false"/>
@@ -28,17 +28,10 @@
 <fields>
   <field name="_version_" type="plong" indexed="false" stored="false" docValues="true"/>
   <field name="object_id" type="string" docValues="true" required="true" stored="true"/>
-  <field name="category" type="string" multiValued="true" indexed="true" docValues="true"/>
-  <field name="brand" type="string" docValues="true"/>
-  <field name="title" type="mytext" stored="true"/>
+  <field name="sku" type="string" docValues="true" required="true" multiValued="true"/>
+  <field name="price" type="pfloat" docValues="true"/>
+  <field name="id_partner" type="pint" docValues="true"/>
   
-  <dynamicField name="attr_*" type="string" docValues="true"/>
-  <dynamicField name="str_attr_*" type="string" docValues="true"/>
-
-  <copyField source="attr_*" dest="all_attr"/>
-  <field name="all_attr" type="mytext" multiValued="true" indexed="true"/>
-  <copyField source="str_attr_*" dest="str_all_attr"/>
-  <field name="str_all_attr" type="string" multiValued="true" docValues="true"/>
 </fields>
 <uniqueKey>object_id</uniqueKey>
 <solrQueryParser defaltOperator="OR"/>

@@ -11,7 +11,6 @@
   "str_attr_size": "Medium",
   "str_attr_brand": "Apple",
   "str_attr_os": "ios",
-  "price": 1400,
   "category": ["mobile", "electronics"]
   },
   {
@@ -26,7 +25,6 @@
   "str_attr_size": "Medium",
   "str_attr_brand": "Samsung",
   "str_attr_os": "android",
-  "price": 1900,
   "category": ["mobile", "electronics"]
   },
   {
@@ -41,7 +39,6 @@
   "str_attr_size": "Large",
   "str_attr_brand": "Samsung",
   "str_attr_os": "android",
-  "price": 2100,
   "category": ["mobile", "electronics"]
   }
 

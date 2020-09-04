@@ -25,6 +25,7 @@ fi
 /opt/docker-solr/scripts/run-initdb
 
 /opt/docker-solr/scripts/precreate-core product /opt/solr/server/solr/configsets/product-core
+/opt/docker-solr/scripts/precreate-core offer /opt/solr/server/solr/configsets/offer-core
 
 
 

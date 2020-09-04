@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+        <luceneMatchVersion>7.0.0</luceneMatchVersion>
+        <requestHandler name="standard" class="solr.SearchHandler" dafault="true" />
+        <requestHandler name="/update" class="solr.UpdateRequestHandler"/>
+        <admin>
+                <defaultQuery>*:*</defaultQuery>
+        </admin>
+      <requestHandler name="/select" class="solr.SearchHandler">
+        <lst name="defaults">
+          <int name="rows">20</int>
+          <str name="defType">edismax</str>
+          <str name="qf">object_id</str>
+        </lst>
+      </requestHandler>
+    <schemaFactory class="ClassicIndexSchemaFactory"/>
+</config>

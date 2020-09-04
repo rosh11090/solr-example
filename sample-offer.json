@@ -1,0 +1,44 @@
+[
+  {
+  "sku": ["product1", "product2"],
+  "object_id": "o123",
+  "id_partner": 23,
+  "price": 45.9
+  },
+  {
+  "sku": ["product1"],
+  "object_id": "product1-89",
+  "id_partner": 89,
+  "price": 89.9
+  },
+  {
+  "sku": ["product2"],
+  "object_id": "product2-o24",
+  "id_partner": 24,
+  "price": 867.9
+  },
+  {
+  "sku": ["product1"],
+  "object_id": "product1-o25",
+  "id_partner": 25,
+  "price": 48.99
+  },
+  {
+  "sku": ["product1"],
+  "object_id": "product1-o24",
+  "id_partner": 24,
+  "price": 46.9
+  },
+  {
+  "sku": ["product2"],
+  "object_id": "product2-o23",
+  "id_partner": 23,
+  "price": 60.9
+  },
+  {
+  "sku": ["product3"],
+  "object_id": "product3-o23",
+  "id_partner": 23,
+  "price": 455.9
+  }
+]

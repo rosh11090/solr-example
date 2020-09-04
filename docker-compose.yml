@@ -11,5 +11,6 @@ services:
       - ./configsets:/opt/solr/server/solr/configsets/
       - ./create-core.sh:/usr/local/bin/create-core.sh
       - ./sample.json:/tmp/sample.json
+      - ./sample-offer.json:/tmp/sample-offer.json
     entrypoint:
       - create-core.sh
